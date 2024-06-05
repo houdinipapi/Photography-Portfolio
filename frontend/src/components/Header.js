@@ -12,7 +12,7 @@ const Header = () => {
     <header className='bg-green-200 fixed w-full px-[30px] lg:px-[100px] z-30 h-[70px] lg:h-[90px] flex items-center'>
       <div className='flex flex-col lg:flex-row lg:items-center w-full justify-between'>
         {/* logo */}
-        <Link to={"/"}>
+        <Link to={"/"} className='max-w-[200px]'>
           <img
             src={fotologo}
             alt='/'
@@ -39,6 +39,12 @@ const Header = () => {
 
         </nav>
       </div>
+
+      {/* Socials */}
+      <Socials />
+
+      {/* Mobile Nav */}
+      <MobileNav />
     </header>
   )
 }
