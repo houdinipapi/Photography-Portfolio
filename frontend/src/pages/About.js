@@ -12,7 +12,7 @@ const About = () => {
         <div className='flex flex-col lg:flex-row h-full items-center justify-center gap-x-24 text-center lg:text-left lg:pt-16'>
 
           {/* Image */}
-          <div className='flex-1 max-h-96 lg:max-h-max order-2 lg:order-none overflow-hidden'>
+          <div className='flex-1 max-h-96 lg:max-h-max order-2 lg:order-none overflow-clipped lg:pt-20 pb-10'>
             <img
               src={AboutImage}
               alt=''

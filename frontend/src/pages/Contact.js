@@ -50,7 +50,7 @@ const Contact = () => {
           </div>
 
           {/* Image */}
-          <div className='lg:flex-1'>
+          <div className='lg:flex-1 lg:pt-10 pb-10'>
             <img
               src={contactImage}
               alt=''
