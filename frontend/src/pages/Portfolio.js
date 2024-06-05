@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Image1 from "../img/portfolio/p1.jpg"
-import Image2 from "../img/portfolio/p2.jpg"
+// import Image1 from "../img/portfolio/p1.jpg"
+// import Image2 from "../img/portfolio/p2.jpg"
 import Image3 from "../img/portfolio/p3.jpg"
 import Image4 from "../img/portfolio/p4.jpg"
 import Image5 from "../img/portfolio/p5.jpg"
