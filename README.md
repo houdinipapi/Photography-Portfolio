@@ -1,2 +1,2 @@
 # Photography-Portfolio
-This is a sample of what photographer's portfolio may look like.
+This is a random sample of what a photographer's portfolio may look like.
