@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply overflow-hidden text-primary font-secondary bg-white;
+    @apply overflow-auto text-primary font-secondary bg-white;
   }
 
   .h1 {
@@ -12,7 +12,7 @@
   }
 
   .section {
-    @apply h-screen w-screen;
+    @apply h-full w-full;
   }
 
   .btn {

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 
 const Home = () => {
   return (
-    <section className='section'>
+    <section className='section bg-pink-200'>
       <div className='container mx-auto h-full relative'>
         {/* Text and Image Wrapper */}
         <div className='flex flex-col justify-center'>
