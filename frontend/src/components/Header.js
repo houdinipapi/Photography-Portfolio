@@ -20,7 +20,7 @@ const Header = () => {
         </Link>
         
         {/* nav */}
-        <nav className='hidden lg:flex gap-x-12 font-semibold'>
+        <nav className='hidden xl:flex gap-x-12 font-semibold'>
           <Link to={"/"} className='text-[#696C6D] hover:text-primary transition'>
             Home
           </Link>
