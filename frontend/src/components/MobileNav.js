@@ -38,7 +38,7 @@ const MobileNav = () => {
         variants={menuVariants}
         initial="hidden"
         animate={openMenu ? "show" : ""}
-        className='bg-white shadow-2xl w-full absolute top-0 right-0 max-w-xs h-screen z-20'
+        className='bg-green-50 shadow-2xl w-full absolute top-0 right-0 max-w-xs h-screen z-20'
       >
 
         {/* icon */}
