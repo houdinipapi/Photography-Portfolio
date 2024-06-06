@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import AboutImage from "../img/about/about.jpg"
 import { Link } from "react-router-dom"
 import { motion } from "framer-motion"
 import { transition1 } from "../transitions"
+import { CursorContext } from '../context/CursorContext'
+
+
 
 const About = () => {
+
+  const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
+
   return (
     <motion.section
       initial={{ opacity: 0, y: "100%" }}
@@ -13,7 +19,11 @@ const About = () => {
       transition={transition1}
       className='section bg-yellow-100'
     >
-      <div className='container mx-auto h-full relative'>
+      <div
+        onMouseEnter={mouseEnterHandler}
+        onMouseLeave={mouseLeaveHandler}
+        className='container mx-auto h-full relative'
+      >
 
         {/* Text & Image Wrapper */}
 

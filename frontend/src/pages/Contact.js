@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import contactImage from "../img/contact/contact.jpg"
 import { transition1 } from '../transitions'
 import { motion } from 'framer-motion'
+import { CursorContext } from '../context/CursorContext'
+
 
 const Contact = () => {
+
+  const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext)
+
+
   return (
     <motion.section
       initial={{ opacity: 0, y: "100%" }}
@@ -27,7 +33,11 @@ const Contact = () => {
           </motion.div>
 
           {/* Text & Form */}
-          <div className='lg:flex-1 lg:pt-30 px-4'>
+          <div
+            onMouseEnter={mouseEnterHandler}
+            onMouseLeave={mouseLeaveHandler}
+            className='lg:flex-1 lg:pt-30 px-4'
+          >
             <h1 className='h1'>Contact Me</h1>
             <p className='mb-12'>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -65,6 +75,8 @@ const Contact = () => {
 
           {/* Image */}
           <motion.div
+            onMouseEnter={mouseEnterHandler}
+            onMouseLeave={mouseLeaveHandler}
             initial={{ opacity: 0, y: "100%" }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: "100%" }}
