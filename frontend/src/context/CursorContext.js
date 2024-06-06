@@ -9,6 +9,9 @@ const CursorProvider = ({ children }) => {
     y: 0
   });
 
+  // Cursor background state
+  const [cursorBG, setCursorBG] = useState("default");
+
   useEffect(() => {
     const move = (e) => {
       setCursorPos({
@@ -34,11 +37,35 @@ const CursorProvider = ({ children }) => {
       y: cursorPos.y - 16,
       backgroundColor: "0E1112",
     },
+    text: {
+      width: "150px",
+      height: "150px",
+      x: cursorPos.x - 72,
+      y: cursorPos.y - 72,
+      backgroundColor: "#FFF",
+      mixBlendMode: "difference",
+    },
+  };
+
+
+  // Mouse Enter Handler
+  const mouseEnterHandler = () => {
+    setCursorBG("text");
+  }
+
+  // Mouse Leave Handler
+  const mouseLeaveHandler = () => {
+    setCursorBG("default");
   }
 
   return (
     <CursorContext.Provider
-      value={{ cursorVariants }}
+      value={{
+        cursorVariants,
+        cursorBG,
+        mouseEnterHandler,
+        mouseLeaveHandler
+      }}
     >
       {children}
     </CursorContext.Provider>
