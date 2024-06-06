@@ -12,21 +12,27 @@ const CursorProvider = ({ children }) => {
   // Cursor background state
   const [cursorBG, setCursorBG] = useState("default");
 
+  const mobileViewportIsActive = window.innerWidth < 768;
+
   useEffect(() => {
-    const move = (e) => {
-      setCursorPos({
-        x: e.clientX,
-        y: e.clientY
-      });
-    };
-
-    window.addEventListener("mousemove", move);
-
-    // Removing Event Listener
-    return () => {
-      window.removeEventListener("mousemove", move);
-    };
-  });
+    if (!mobileViewportIsActive) {
+      const move = (e) => {
+        setCursorPos({
+          x: e.clientX,
+          y: e.clientY
+        });
+      };
+  
+      window.addEventListener("mousemove", move);
+  
+      // Removing Event Listener
+      return () => {
+        window.removeEventListener("mousemove", move);
+      };
+    } else {
+      setCursorBG("none");
+    }
+  }, [mobileViewportIsActive]);
 
   console.log(cursorPos)
 
@@ -45,6 +51,11 @@ const CursorProvider = ({ children }) => {
       backgroundColor: "#FFF",
       mixBlendMode: "difference",
     },
+    none: {
+      width: 0,
+      height: 0,
+      backgroundColor: "rgba(255, 255, 255, 1)"
+    }
   };
 
 
