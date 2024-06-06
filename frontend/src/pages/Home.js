@@ -41,7 +41,9 @@ const Home = () => {
               transition={transition1}
               className='relative lg:-right-40 overflow-clipped'
             >
-              <img
+              <motion.img
+                whileHover={{ scale: 1.1 }}
+                transition={transition1}
                 src={HomeImage}
                 alt='Home'
               />
