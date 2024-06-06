@@ -1,10 +1,18 @@
 import React from 'react'
 import AboutImage from "../img/about/about.jpg"
 import { Link } from "react-router-dom"
+import { motion } from "framer-motion"
+import { transition1 } from "../transitions"
 
 const About = () => {
   return (
-    <section className='section bg-yellow-100'>
+    <motion.section
+      initial={{ opacity: 0, y: "100%" }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: "100%" }}
+      transition={transition1}
+      className='section bg-yellow-100'
+    >
       <div className='container mx-auto h-full relative'>
 
         {/* Text & Image Wrapper */}
@@ -20,7 +28,13 @@ const About = () => {
           </div>
 
           {/* Text */}
-          <div className='flex-1 pt-36 pb-14 lg:pt-0 lg:w-auto z-10 flex flex-col justify-center items-center lg:items-start'>
+          <motion.div
+            initial={{ opacity: 0, y: "-80%" }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: "-80%" }}
+            transition={transition1}
+            className='flex-1 pt-36 pb-14 lg:pt-0 lg:w-auto z-10 flex flex-col justify-center items-center lg:items-start'
+          >
             <h1 className='h1'>About Me</h1>
             <p className='mb-12 max-w-sm'>
               Lorem ipsum dolor sit amet consectetur adipiscing elit ut aliquam purus sit amet luctus. <b>Venenatis lectus magna praesent</b> elementum facilisis leo vel.
@@ -31,12 +45,12 @@ const About = () => {
             <Link to={"/portfolio"} className='btn rounded-2xl'>
               View My Work
             </Link>
-          </div>
+          </motion.div>
 
         </div>
 
       </div>
-    </section>
+    </motion.section>
   )
 }
 
