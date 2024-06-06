@@ -8,16 +8,30 @@ import Image5 from "../img/portfolio/p5.jpg"
 import Image6 from "../img/portfolio/p6.jpg"
 
 import { Link } from "react-router-dom"
+import { motion } from "framer-motion"
+import { transition1 } from '../transitions'
 
 const Portfolio = () => {
   return (
-    <section className='section bg-orange-100'>
+    <motion.section
+      initial={{ opacity: 0, y: "100%" }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: "100%" }}
+      transition={transition1}
+      className='section bg-orange-100'
+    >
       <div className='container mx-auto h-full relative'>
 
         <div className='flex flex-col lg:flex-row h-full items-center justify-start gap-x-24 text-center lg:text-left pt-24 lg:pt-36 pb-8'>
 
           {/* Text */}
-          <div className='flex flex-col lg:items-start'>
+          <motion.div
+            initial={{ opacity: 0, y: "-80%" }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: "-80%" }}
+            transition={transition1}
+            className='flex flex-col lg:items-start'
+          >
             <h1 className='h1'>Portfolio</h1>
             <p className='mb-12 max-w-sm'>
               Lorem ipsum dolor sit amet consectetur adipiscing elit ut aliquam purus sit amet luctus. <b>Venenatis lectus magna praesent</b> elementum facilisis leo vel.
@@ -30,7 +44,7 @@ const Portfolio = () => {
               Hire Me
             </Link>
 
-          </div>
+          </motion.div>
 
           {/* Image Grid */}
           <div className='grid grid-cols-2 lg:gap-2'>
@@ -89,7 +103,7 @@ const Portfolio = () => {
         </div>
 
       </div>
-    </section>
+    </motion.section>
   )
 }
 
